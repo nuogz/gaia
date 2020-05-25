@@ -1,11 +1,12 @@
+const inited = {};
+
 module.exports = function PathGetterIniter(configRaw, parseOption, isStatEnabled) {
 	const config = JSON.parse(JSON.stringify(configRaw));
-	const inited = {};
 
 	const ensure = (key, funcInit) => inited[key] || (inited[key] = funcInit());
 
 	const ensurer = {
-		Path: () => ensure('path', () => require('path')),
+		Path: () => ensure('path', () => require.main.require('path')),
 
 		P: () => ensure('P', () => ({
 			// 当前工作目录
@@ -13,7 +14,7 @@ module.exports = function PathGetterIniter(configRaw, parseOption, isStatEnabled
 			// 程序入口目录
 			md: ensurer.Path().parse(require.main.filename).dir
 		})),
-		R: () => ensurer.Path().resolve,
+		R: () => ensure('R', () => ensurer.Path().resolve),
 		RW: () => ensure('RW', () => function WorkDirResolver(...paths) { return ensurer.Path().resolve(ensurer.P().wd, ...paths); }),
 		RM: () => ensure('RM', () => function MainDirResolver(...paths) { return ensurer.Path().resolve(ensurer.P().md, ...paths); }),
 	};

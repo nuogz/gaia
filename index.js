@@ -16,11 +16,6 @@ const arrEasyGetter = ['node', 'console', 'path'];
  * @type {object}
  */
 const configDefault = require('./.gaiarc');
-/**
- * 表示`Gaia`是否已经初始化
- * @type {boolean}
- */
-let isInited = false;
 
 /**
  * 合并配置
@@ -117,7 +112,7 @@ const applyConfig = function(configCall = {}, isAssignDefault = true, isAssignRu
 	}
 
 	if(isAssignRuncom) {
-		const R = require('path').resolve;
+		const R = require.main.require('path').resolve;
 
 		const arrPathRequire = assignRuncomUpper ? require.main.paths.slice(0, 1 + ~~assignRuncomUpper).reverse() : require.main.paths;
 
@@ -174,9 +169,7 @@ const isStatEnabled = function(value, prop, propRaw) {
  * @version 20.05.25.A
  * @module rotonith/gaia
  */
-module.exports = function Gaia(configCall, isAssignDefault = true, isAssignRuncom = true, assignRuncomUpper = false, isForce = false) {
-	if(!isForce && isInited) { return; }
-
+const GaiaIniter = function GaiaIniter(configCall, isAssignDefault = true, isAssignRuncom = true, assignRuncomUpper = false) {
 	const config = applyConfig(configCall, isAssignDefault, isAssignRuncom, assignRuncomUpper);
 
 	/* eslint-disable-next-line no-unused-vars */
@@ -202,7 +195,9 @@ module.exports = function Gaia(configCall, isAssignDefault = true, isAssignRunco
 		global[config.global] = Gaia;
 	}
 
-	isInited = true;
-
 	return Gaia;
 };
+
+global.__gaia = GaiaIniter;
+
+module.exports = GaiaIniter;
