@@ -1,0 +1,66 @@
+
+~: throw error
+@: return match type
+
+U: ['undefined'],
+N: ['null'],
+
+S: ['\'\''],
+
+t: ['true'],
+B: ['false'],
+
+s: ['string'],
+b: ['boolean'],
+n: ['number'],
+
+f: ['function'],
+
+a: ['array'],
+
+o: ['non-null object'],
+st: ['non-empty string'],
+nt: ['non-zero number'],
+
+NN: ['nan'],
+
+E: ['undefined', 'null'],
+EF: ['undefined', 'null', 'false'],
+F: ['undefined', 'null', 'nan', 'false', '0', '\'\''],
+
+0: ['0'],
+1: ['1'],
+2: ['2'],
+3: ['3'],
+4: ['4'],
+5: ['5'],
+6: ['6'],
+7: ['7'],
+8: ['8'],
+9: ['9'],
+
+我想要什么?
+想要一个公共环境
+公共环境里有所有常用的功能
+用才加载
+不重复加载不冗余
+四大类功能
+	path路径类
+	console日志显示类
+	node官方模块
+	tool小工具类
+	第三方库
+支持配置
+	合并
+	配置递归
+	支持子配置，能复用就复用
+配置里的功能不会被覆盖
+
+配置的来源
+	代码参数(适合库)
+	.gaiarc.js(on)
+
+
+
+Gaia 盖亚寓意大地
+一切程序的基础

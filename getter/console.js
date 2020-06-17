@@ -1,11 +1,29 @@
-module.exports = function ConsoleGetterIniter(configRaw, parseOption, isStatEnabled) {
+const Initer = require('../libs/Initer');
+
+module.exports = function ConsoleGetterIniter(configRaw, parseOption, A) {
+	const initers = {};
+	const initersPrivate = {};
+
 	const config = JSON.parse(JSON.stringify(configRaw));
 
-	return function ConsoleGetter(propRaw) {
-		const [value, prop] = parseOption(propRaw, config);
+	for(const prop in config) {
+		const value = config[prop];
+		const target = (1 == value ? initers : (2 == value ? initersPrivate : null));
 
-		if(isStatEnabled(value, prop, propRaw)) {
-			return (console || 14)[prop];
+		if(target) {
+			target[prop] = new Initer(function() {
+				return (console || 14)[prop];
+			});
 		}
-	};
+	}
+
+	for(const prop in config) {
+		A(':st', config[prop], () => {
+			const [, propFinal] = parseOption(prop, config);
+
+			initers[prop] = initers[propFinal] || initersPrivate[propFinal];
+		});
+	}
+
+	return initers;
 };

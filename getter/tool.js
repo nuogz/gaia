@@ -1,81 +1,97 @@
-const T = {
-	isEmpty: function(data) { return data === undefined || data === null; },
-	isNegate: function(data) { return data === undefined || data === null || data === false; },
-	isObject: function(data) { return typeof data == 'object' && data !== null; },
-	isString: function(data) { return typeof data == 'string' || data instanceof String; },
-	isStringT: function(data) { return (typeof data == 'string' || data instanceof String) && data.trim() != ''; },
+const Initer = require('../libs/Initer');
+
+const mapRequire = {};
+
+const getRequire = function(package, module) {
+	const map = mapRequire[module.filename] || (mapRequire[module.filename] = {});
+
+	return map[package] || (map[package] = () => module.require(package));
 };
 
-module.exports = function PathGetterIniter(configToolRaw, parseOption, isStatEnabled) {
+const parseConfigTool = function(configRaw, module, A) {
 	const config = {};
 
-	for(const prop in configToolRaw) {
-		const value = configToolRaw[prop];
+	for(const prop in configRaw) {
+		const value = configRaw[prop];
 
-		if(T.isStringT(value)) {
-			config[prop] = value;
-		}
-		else {
-			let stat, tool, initer, callback;
+		let stat, tool, initer, parser, callback, async = false;
 
-			if(T.isNegate(value)) {
+		if(A('@:st', value)) {
+			if(value.startsWith(':')) {
+				stat = 1;
+				initer = value;
+			}
+			else {
+				config[prop] = value;
+
 				continue;
 			}
-			else if(typeof value == 'function') {
+		}
+
+		A('foa:EF', value, {
+			f: () => {
 				stat = 1;
 				tool = value;
-			}
-			else if(typeof value == 'number') {
-				if(value == 0) { continue; }
+			},
+			a: () => {
+				if(value[0] == 0) { return; }
 
+				[stat, tool, initer, parser, callback, async] = value;
+			},
+			o: () => {
+				if(value.stat == 0) { return; }
+
+				({ stat, tool, initer, parser, callback, async } = value);
+			},
+			nt: () => {
 				stat = value;
-			}
-			else if(value instanceof Array) {
-				if(value[0] == 0) { continue; }
+			},
+		});
 
-				[stat, tool, initer, callback] = value;
-			}
-			else if(T.isObject(value)) {
-				if(value.stat == 0) { continue; }
+		if(A('@:st', initer) && initer.startsWith(':')) {
+			initer = getRequire(initer.replace(':', ''), module);
+		}
 
-				({ stat, tool, initer, callback } = value);
-			}
-
-			if(!tool) {
-				if(typeof initer != 'function') {
-					if(prop in T) {
-						tool = T[prop];
-					}
-					else if(initer == 'require') {
-						initer = () => require.main.require(prop);
-					}
-					else {
-						throw TypeError(`[Gaia] 类型错误: 在[option.tool.${prop}]下, 当[stat]有效且无指定[tool]时, [initer]的类型应为{function|'require'}`);
-					}
+		// 如果没有本体tool, 启用并检查initer
+		if(!tool) {
+			A('~f|require', initer, {
+				require: () => {
+					initer = getRequire(prop, module);
 				}
-			}
+			}, `runcom.tool.${prop}.initer`);
+		}
 
-			if(callback && typeof callback != 'function') {
-				throw TypeError(`[Gaia] 类型错误: [option.tool.${prop}.callback]的类型应为{function|false|undefined|null}`);
-			}
+		A('~fEB', parser, null, `runcom.tool.${prop}.parser`);
+		A('~fEB', callback, null, `runcom.tool.${prop}.callback`);
 
-			config[prop] = { stat, tool, initer, callback };
+		config[prop] = { stat, tool, initer, parser, callback, async };
+	}
+
+	return config;
+};
+
+module.exports = function ToolGetterIniter(configRaw, module = require.main, parseOption, A) {
+	const config = parseConfigTool(configRaw, module, A);
+
+	const initers = {};
+	const initersPrivate = {};
+
+	for(const prop in config) {
+		const conf = config[prop];
+		const target = (1 == conf.stat ? initers : (2 == conf.stat ? initersPrivate : null));
+
+		if(target) {
+			target[prop] = new Initer(conf.initer, conf.parser, conf.callback, conf.async);
 		}
 	}
 
-	return function PathGetter(propRaw) {
-		const [conf, prop] = parseOption(propRaw, config);
+	for(const prop in config) {
+		A(':st', config[prop], () => {
+			const [, propFinal] = parseOption(prop, config);
 
-		if(T.isObject(conf) && isStatEnabled(conf.stat, prop, propRaw)) {
-			if(!conf.tool) {
-				conf.tool = conf.initer(conf, prop);
+			initers[prop] = initers[propFinal] || initersPrivate[propFinal];
+		});
+	}
 
-				conf.callback(conf.tool);
-			}
-
-			return conf.tool;
-		}
-	};
+	return initers;
 };
-
-module.exports.T = T;

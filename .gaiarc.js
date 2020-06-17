@@ -1,5 +1,5 @@
 module.exports = {
-	global: 'G',
+	prop: 'G',
 
 	node: {
 		assert: 1,
@@ -44,19 +44,12 @@ module.exports = {
 	console: {
 		log: 1,
 		error: 1,
-		warn: 1,
 	},
 	path: {
 		P: 0,
 		R: 0,
 		RW: 0,
-		RM: 0,
+		RE: 0,
 	},
-	tool: {
-		isEmpty: 1,
-		isNegate: 1,
-		isObject: 1,
-		isString: 1,
-		isStringT: 1,
-	}
+	tool: {}
 };
