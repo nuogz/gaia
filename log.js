@@ -12,12 +12,12 @@
  * @param {string} levelLog 日志等级
  * @param {string} pathSave 保存路径
  * @param {boolean} isColorText 是否使用彩色编码保存日志
- * @version 2.4.0-2021.01.19.01
+ * @version 2.4.1-2021.01.29.01
  * @requires log4js(6)
  * @requires chalk(4)
  * @requires moment(2)
  */
-const Log = function(nameLog = 'default', levelLog = 'all', pathSave = null, isColorText = true) {
+const initLog = function(nameLog = 'default', levelLog = 'all', pathSave = null, isColorText = true) {
 	const PA = require('path');
 
 	const Log4js = require('log4js');
@@ -179,4 +179,4 @@ const Log = function(nameLog = 'default', levelLog = 'all', pathSave = null, isC
 	return logger;
 };
 
-module.exports = Log;
+module.exports = initLog;
