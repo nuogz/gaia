@@ -12,7 +12,7 @@
  * @param {string} levelLog 日志等级
  * @param {string} pathSave 保存路径
  * @param {boolean} isColorText 是否使用彩色编码保存日志
- * @version 2.4.1-2021.01.29.01
+ * @version 2.4.2-2021.02.01.01
  * @requires log4js(6)
  * @requires chalk(4)
  * @requires moment(2)
@@ -35,7 +35,7 @@ const initLog = function(nameLog = 'default', levelLog = 'all', pathSave = null,
 	const chalkTextValue = Chalk.white('[$1]');
 
 	const colorful = function(str) {
-		return str
+		return String(str)
 			.replace(/\[(.*?)\]/g, chalkTextWord)
 			.replace(/\{(.*?)\}/g, chalkTextValue);
 	};
