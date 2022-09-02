@@ -3,11 +3,9 @@ import { resolve } from 'path';
 
 import Chalk from 'chalk';
 
-import { ensureDirSync } from '../lib/fs-extra.js';
+import { C, dirPackage, PKG } from '@nuogz/pangu';
 
-import { dirPackage } from '../lib/dir.js';
-import PKG from '../lib/package.js';
-import C from '../lib/config.js';
+import { ensureDirSync } from '../lib/fs-extra.js';
 
 import copy from './oper/copy.js';
 import handleJSON from './oper/handle-json.js';

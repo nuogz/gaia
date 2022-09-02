@@ -1,6 +1,6 @@
 {
 	"name": "@nuogz/gaia",
-	"version": "3.0.0",
+	"version": "3.1.0",
 	"description": "Preset environment with Nuogz libraries on Node or Vue, or both",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
@@ -24,9 +24,9 @@
 		"locale/**"
 	],
 	"dependencies": {
+		"@nuogz/pangu": "^3.0.4",
 		"@nuogz/poseidon": "^7.0.3",
 		"chalk": "^5.0.1",
-		"commander": "^9.4.0",
 		"fs-extra": "^10.1.0"
 	},
 	"devDependencies": {

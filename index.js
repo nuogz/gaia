@@ -1,11 +1,12 @@
-import { Command } from 'commander/esm.mjs';
+import './index.env.js';
 
-import PKG from './lib/package.js';
+import { Commander, PKG } from '@nuogz/pangu';
 
 import init from './src/init.js';
 
 
-const CMD = new Command();
+
+const CMD = new Commander.Command();
 
 CMD.version(PKG.version);
 
