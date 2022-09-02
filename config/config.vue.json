@@ -1,0 +1,15 @@
+{
+	"dirsEnsure": [
+		"src/lib"
+	],
+	"files": {
+		"postcss.config.cjs": "copy|vue",
+		"tailwind.config.cjs": "copy|vue",
+		"vite.config.js": "copy|vue",
+		"src/index.html": "copy|vue",
+		"src/index.js": "copy|vue",
+		"src/index.vue": "copy|vue",
+		"src/lib/load-module.js": "copy|vue",
+		"src/lib/moment.js": "copy|vue"
+	}
+}

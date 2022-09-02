@@ -1,0 +1,5 @@
+{
+	"files": {
+		"src/dist.map.js": "copy|vue-server"
+	}
+}

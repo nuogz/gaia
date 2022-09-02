@@ -1,0 +1,10 @@
+{
+	"dependencies": {
+		"@nuogz/desire": "^5",
+		"@nuogz/desire-route": "^2",
+		"@nuogz/pangu": "^2"
+	},
+	"devDependencies": {
+		"eslint": "^8"
+	}
+}

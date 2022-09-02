@@ -1,0 +1,35 @@
+{
+	"name": "@nuogz/gaia",
+	"version": "3.0.0",
+	"description": "Preset environment with Nuogz libraries on Node or Vue, or both",
+	"author": "Nuogz",
+	"license": "LGPL-3.0-or-later",
+	"repository": {
+		"type": "git",
+		"url": "github:nuogz/gaia"
+	},
+	"type": "module",
+	"typesSource": [],
+	"engines": {
+		"node": ">=14.18.1"
+	},
+	"main": "./index.js",
+	"bin": "./index.js",
+	"files": [
+		"index.js",
+		"lib/**",
+		"src/**",
+		"config/**",
+		"preset/**",
+		"locale/**"
+	],
+	"dependencies": {
+		"@nuogz/poseidon": "^7.0.3",
+		"chalk": "^5.0.1",
+		"commander": "^9.4.0",
+		"fs-extra": "^10.1.0"
+	},
+	"devDependencies": {
+		"eslint": "^8.23.0"
+	}
+}

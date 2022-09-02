@@ -1,0 +1,37 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Current File",
+			"console": "integratedTerminal",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "${fileDirname}",
+			"runtimeExecutable": "node.exe",
+			"program": "${fileBasename}",
+			"args": [
+				"${workspaceRoot}"
+			]
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch BIN",
+			"console": "integratedTerminal",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "${fileDirname}",
+			"runtimeExecutable": "node.exe",
+			"program": "${workspaceRoot}/index.bin.js",
+			"args": [
+				"init",
+				"server",
+				"vue"
+			],
+		},
+	]
+}

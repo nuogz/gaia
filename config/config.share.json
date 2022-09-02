@@ -1,0 +1,48 @@
+{
+	"dirsEnsure": [
+		".vscode",
+		"config",
+		"lib",
+		"src"
+	],
+	"files": {
+		"package.json": {
+			"type": "handle-json",
+			"isPackage": true,
+			"handles": [
+				"concat-key-value|scripts",
+				"concat-key-value|dependencies",
+				"concat-key-value|devDependencies",
+				"concat-array|typesSource"
+			]
+		},
+		"LICENSE": "copy|share",
+		".vscode/extensions.json": {
+			"type": "handle-json",
+			"handles": [
+				"concat-array|recommendations"
+			]
+		},
+		".vscode/launch.json": {
+			"type": "handle-json",
+			"handles": [
+				"concat-array|configurations|name"
+			]
+		},
+		".vscode/settings.json": {
+			"type": "handle-json",
+			"handles": [
+				"concat-key-value"
+			]
+		},
+		".eslintrc.cjs|eslintrc.cjs": "copy|share",
+		".gitignore|gitignore.txt": "concat-text-line",
+		"jsconfig.json": {
+			"type": "handle-json",
+			"handles": [
+				"concat-array|exclude"
+			]
+		},
+		"index.env.js": "copy|share"
+	}
+}
