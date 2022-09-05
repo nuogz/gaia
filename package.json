@@ -1,6 +1,6 @@
 {
 	"name": "@nuogz/gaia",
-	"version": "3.1.1",
+	"version": "3.1.2",
 	"description": "Preset environment with Nuogz libraries on Node or Vue, or both",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
@@ -17,7 +17,7 @@
 	"bin": "./index.js",
 	"files": [
 		"index.js",
-		"index.bin.js",
+		"index.env.js",
 		"lib/**",
 		"src/**",
 		"config/**",

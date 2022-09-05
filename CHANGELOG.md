@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.1.2 - 2022.09.05 09
+* fix package files include
+
+
 ## v3.1.1 - 2022.09.05 09
 * fix package files include
 
