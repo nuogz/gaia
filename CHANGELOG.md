@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.1.1 - 2022.09.05 09
+* fix package files include
+
+
 ## v3.1.0 - 2022.09.02 18
 * use `@nuogz/pangu@3` instead base libraries
 
