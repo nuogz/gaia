@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.1.3 - 2022.09.05 09
+* fuck shit `npm pack`
+
+
 ## v3.1.2 - 2022.09.05 09
 * fix package files include
 
