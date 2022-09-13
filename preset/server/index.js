@@ -25,5 +25,6 @@ new Desire({
 	faces,
 	folds,
 
+	locale: C.log?.locale,
 	logger: G,
 }).start();

@@ -2,7 +2,7 @@
 	"dependencies": {
 		"@nuogz/desire": "^5",
 		"@nuogz/desire-route": "^2",
-		"@nuogz/pangu": "^2"
+		"@nuogz/pangu": "^3"
 	},
 	"devDependencies": {
 		"eslint": "^8"

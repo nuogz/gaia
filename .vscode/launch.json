@@ -12,26 +12,7 @@
 			"cwd": "${fileDirname}",
 			"runtimeExecutable": "node.exe",
 			"program": "${fileBasename}",
-			"args": [
-				"${workspaceRoot}"
-			]
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Launch BIN",
-			"console": "integratedTerminal",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
-			"cwd": "${fileDirname}",
-			"runtimeExecutable": "node.exe",
-			"program": "${workspaceRoot}/index.bin.js",
-			"args": [
-				"init",
-				"server",
-				"vue"
-			],
+			"args": []
 		},
 	]
 }

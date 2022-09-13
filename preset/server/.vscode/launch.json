@@ -13,6 +13,19 @@
 			"runtimeExecutable": "node.exe",
 			"program": "${fileBasename}",
 			"args": []
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Server",
+			"console": "integratedTerminal",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "node.exe",
+			"program": "index.js",
+			"args": []
 		}
 	]
 }
