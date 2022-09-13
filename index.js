@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import './index.env.js';
 
 import { Commander, PKG } from '@nuogz/pangu';

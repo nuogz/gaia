@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v3.1.5 - 2022.09.13 09
+* try to support `#!`
+* bump up dependencies
+
+
 ## v3.1.4 - 2022.09.13 09
 * fix preset files
 
