@@ -13,6 +13,6 @@
 			"runtimeExecutable": "node.exe",
 			"program": "${fileBasename}",
 			"args": []
-		},
+		}
 	]
 }

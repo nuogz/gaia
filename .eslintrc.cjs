@@ -19,11 +19,23 @@ const parseKeys = rc => {
 const rcSources = [];
 
 if(typesSource.includes('browser')) {
-	rcSources.push({
+	const rcBrower = {
 		files: ['src/**/*.js'],
 		excludedFiles: [],
 		env: { es2022: true, node: false, browser: true },
-	});
+	};
+	rcSources.push(rcBrower);
+
+	if(typesSource.includes('node-browser-share')) {
+		rcBrower.env.node = true;
+		rcBrower.excludedFiles.push('src/**/*.web.js', 'src/**/*.web/**/*.js');
+
+		rcSources.push({
+			files: ['src/**/*.web.js', 'src/**/*.web/**/*.js'],
+			excludedFiles: [],
+			env: { es2022: true, node: false, browser: true },
+		});
+	}
 }
 
 if(typesSource.includes('vue')) {

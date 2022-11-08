@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.1.7 - 2022.11.08 09
+* update some vscode config
+
+
 ## v3.1.6 - 2022.11.08 09
 * use `wock-client@2` instead `wock@1` in vue preset
 * bump up dependencies
