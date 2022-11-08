@@ -9,7 +9,7 @@ import { brop } from '@nuogz/utility';
 import { aegis } from '@nuogz/aegis';
 import { install as installAlert, $alert } from '@nuogz/vue-alert';
 import { install as installTippy } from '@nuogz/vue-tip';
-import { install as installWocker } from '@nuogz/wock/web';
+import { install as installWocker } from '@nuogz/wock-client';
 
 import { install as installModuleLoader } from './lib/load-module.js';
 

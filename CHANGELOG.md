@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v3.1.6 - 2022.11.08 09
+* use `wock-client@2` instead `wock@1` in vue preset
+* bump up dependencies
+
+
 ## v3.1.5 - 2022.09.13 09
 * try to support `#!`
 * bump up dependencies

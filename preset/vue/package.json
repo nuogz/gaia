@@ -18,7 +18,7 @@
 		"@nuogz/vue-components": "^1.3.2",
 		"@nuogz/vue-sidebar": "^1.1.1",
 		"@nuogz/vue-tip": "^1.0.1",
-		"@nuogz/wock": "^1.0.0",
+		"@nuogz/wock-client": "^2.0.7",
 		"@vitejs/plugin-vue": "^3.0.3",
 		"autoprefixer": "^10.4.8",
 		"eslint-plugin-vue": "^9.4.0",
