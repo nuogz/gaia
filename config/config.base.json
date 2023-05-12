@@ -16,7 +16,7 @@
 				"concat-array|typesSource"
 			]
 		},
-		"LICENSE": "copy|share",
+		"LICENSE": "copy|base",
 		".vscode/extensions.json": {
 			"type": "handle-json",
 			"handles": [
@@ -35,7 +35,6 @@
 				"concat-key-value"
 			]
 		},
-		".eslintrc.cjs|eslintrc.cjs": "copy|share",
 		".gitignore|gitignore.txt": "concat-text-line",
 		"jsconfig.json": {
 			"type": "handle-json",
@@ -43,6 +42,7 @@
 				"concat-array|exclude"
 			]
 		},
-		"index.env.js": "copy|share"
+		"eslint.config.js": "copy|base",
+		".npmrc|npmrc.txt": "copy|base"
 	}
 }
