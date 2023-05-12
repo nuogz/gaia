@@ -1,5 +1,8 @@
 {
+	"typesSource": [
+		"node"
+	],
 	"dependencies": {
-		"@nuogz/pangu": "^3"
+		"@nuogz/pangu": "^4"
 	}
 }

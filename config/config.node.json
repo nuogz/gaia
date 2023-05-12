@@ -1,5 +1,6 @@
 {
 	"files": {
-		"index.js": "copy|node"
+		"index.js": "copy|node",
+		"index.env.js": "copy|node"
 	}
 }
