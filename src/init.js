@@ -12,7 +12,14 @@ import concatTextLine from './oper/concat-text-line.js';
 
 
 
-const typesProject = ['node', 'server', 'browser', 'vue'];
+const typesPreset = ['node', 'server', 'browser', 'vue'];
+const levelsTypePreset = {
+	node: 1,
+	server: 2,
+	browser: 1,
+	vue: 2,
+	'vue-server': 3,
+};
 
 const opers = {
 	'copy': copy,
@@ -45,11 +52,15 @@ export default async function init(envs, force = false) {
 	if(force) { console.warn(Chalk.yellow('IT WILL BE OVERWRITE ALL RELATED EXISTED FILES. BE CAREFUL!\n')); }
 
 
-	envs = envs.filter(env => typesProject.includes(env));
+	if(envs.includes('server')) { envs.unshift('node'); }
 	if(envs.includes('vue')) { envs.unshift('browser'); }
 	if(envs.includes('vue') && envs.includes('server')) { envs.push('vue-server'); }
+	envs = [...new Set(envs)].filter(env => typesPreset.includes(env)).sort((a, b) => levelsTypePreset[a] - levelsTypePreset[b]);
+
 
 	if(!envs.length) { throw 'empty envs'; }
+
+
 	console.log('version: ', Chalk.green(PKG.version));
 	console.log('envs: ', Chalk.green(envs.join(' ')) + '\n');
 
