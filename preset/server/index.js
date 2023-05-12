@@ -1,4 +1,5 @@
 import './index.env.js';
+
 import { dirPackage, C, G } from '@nuogz/pangu';
 
 import { resolve } from 'path';
@@ -10,21 +11,25 @@ import readRoute from '@nuogz/desire-route';
 
 const { folds, faces } = await readRoute(resolve(dirPackage, 'src'));
 
-new Desire({
+
+const desire = await new Desire({
 	name: '服务',
 	host: C.server.host,
 	port: C.server.port,
 
-	mare: {
-		before: ['parseRaw'],
-		after: ['toSuccess'],
+	harbour: {
+		mare: {
+			before: ['parseRaw'],
+			after: ['toSuccess'],
+		},
+
+		facePrefix: '/api',
+
+		faces,
+		folds,
 	},
 
-	facePrefix: '/api',
+	logger: { logger: G }
+});
 
-	faces,
-	folds,
-
-	locale: C.log?.locale,
-	logger: G,
-}).start();
+desire.start();

@@ -1,6 +1,7 @@
 {
 	"files": {
 		"index.js": "copy|server",
+		"index.env.js": "copy|node",
 		"config/config.server.json": "copy|server",
 		"src/version.api.js": "copy|server"
 	}

@@ -1,8 +1,12 @@
 {
+	"typesSource": [
+		"node"
+	],
 	"dependencies": {
-		"@nuogz/desire": "^5",
+		"@nuogz/desire": "^6",
+		"@nuogz/desire-harbour": "^6",
 		"@nuogz/desire-route": "^2",
-		"@nuogz/pangu": "^3"
+		"@nuogz/pangu": "^4"
 	},
 	"devDependencies": {
 		"eslint": "^8"
