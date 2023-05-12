@@ -7,12 +7,12 @@ import Chalk from 'chalk';
 
 const console = globalThis.console;
 
-export default function copyShare(file, fileSource = file, oper, envs, dirCWD, dirPreset, force) {
+export default function copyBase(file, fileSource = file, oper, envs, dirCWD, dirPreset, force) {
 	const pathFileTarget = resolve(dirCWD, file);
 	if(existsSync(pathFileTarget) && !force) { return; }
 
 
-	const env = oper.base ?? oper.params?.[0] ?? 'share';
+	const env = oper.base ?? oper.params?.[0] ?? 'base';
 
 
 	copyFileSync(

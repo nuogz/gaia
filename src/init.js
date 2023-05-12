@@ -2,10 +2,9 @@ import { existsSync } from 'fs';
 import { resolve } from 'path';
 
 import Chalk from 'chalk';
+import { ensureDirSync } from 'fs-extra/esm';
 
 import { C, dirPackage, PKG } from '@nuogz/pangu';
-
-import { ensureDirSync } from '../lib/fs-extra.js';
 
 import copy from './oper/copy.js';
 import handleJSON from './oper/handle-json.js';
@@ -25,7 +24,7 @@ const console = globalThis.console;
 
 
 const ensureDirs = (envs, dirCWD) => {
-	const setDirsEnsure = new Set(C.share.dirsEnsure ?? []);
+	const setDirsEnsure = new Set(C.base.dirsEnsure ?? []);
 
 	envs.forEach(env => (C[env]?.dirsEnsure ?? []).forEach(dir => setDirsEnsure.add(dir)));
 
@@ -33,10 +32,11 @@ const ensureDirs = (envs, dirCWD) => {
 		const pathDir = resolve(dirCWD, dir);
 
 
-		if(!existsSync(pathDir)) { ensureDirSync(pathDir); }
+		if(!existsSync(pathDir)) {
+			ensureDirSync(pathDir);
 
-
-		console.log(Chalk.yellow('makedir'), dir, Chalk.green('✔'));
+			console.log(Chalk.yellow('makedir'), dir, Chalk.green('✔'));
+		}
 	});
 };
 
@@ -61,7 +61,7 @@ export default async function init(envs, force = false) {
 	ensureDirs(envs, dirCWD);
 
 
-	const files = Object.assign({}, C.share.files, ...envs.map(env => C[env]?.files ?? {}));
+	const files = Object.assign({}, C.base.files, ...envs.map(env => C[env]?.files ?? {}));
 
 
 	Object.entries(files).forEach(([fileRaw, oper]) => {

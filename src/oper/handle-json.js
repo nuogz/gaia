@@ -1,9 +1,8 @@
 import { existsSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { parse, resolve } from 'path';
 
 import Chalk from 'chalk';
-
-import { readJSONSync } from '../../lib/fs-extra.js';
+import { readJSONSync } from 'fs-extra/esm';
 
 
 
@@ -27,7 +26,7 @@ export default function handleJSON(file, fileSource = file, oper, envs, dirCWD, 
 	if(existsSync(pathFileTarget) && !force && !oper.isPackage) { return; }
 
 
-	const env = oper.env ?? oper.params?.[0] ?? 'share';
+	const env = oper.env ?? oper.params?.[0] ?? 'base';
 	const handles = oper.handles ?? oper.params?.[1] ?? [];
 
 
@@ -113,6 +112,9 @@ export default function handleJSON(file, fileSource = file, oper, envs, dirCWD, 
 
 
 		base = Object.assign(base, source);
+
+
+		if(!base.name) { base.name = parse(dirCWD).base; }
 	}
 
 

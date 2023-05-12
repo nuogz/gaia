@@ -5,7 +5,6 @@ import Chalk from 'chalk';
 
 
 
-
 export default function concatTextLine(file, fileSource = file, oper, envs, dirCWD, dirPreset, force) {
 	const pathFileTarget = resolve(dirCWD, file);
 	if(existsSync(pathFileTarget) && !force) { return; }
@@ -17,7 +16,7 @@ export default function concatTextLine(file, fileSource = file, oper, envs, dirC
 	envs.forEach((env, index) => {
 		try {
 			const linesSub = readFileSync(resolve(dirPreset, env, fileSource), 'utf8').trim().split('\n')
-				.map(line => line.trim()).filter(line => line);
+				.map(line => line.trim());
 
 
 			linesSub.forEach(line => {
