@@ -1,6 +1,4 @@
 {
-	"files.trimTrailingWhitespace": true,
-	"javascript.preferences.importModuleSpecifierEnding": "js",
 	"html.format.enable": false,
 	"vetur.format.defaultFormatter.html": "none",
 	"vetur.format.defaultFormatter.js": "vscode-typescript",

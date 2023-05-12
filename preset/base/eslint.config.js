@@ -45,7 +45,7 @@ const configs = [
 if(!typesSource.length) { configs.push({ rules: rulesBase }); }
 
 
-if(typesSource.includes('node-browser-mixin')) {
+if(typesSource.includes('node') && typesSource.includes('browser')) {
 	configs.push({
 		files: ['**/*.js'],
 		ignores: [
