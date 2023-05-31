@@ -55,7 +55,7 @@ export default async function init(envs, force = false) {
 	if(envs.includes('server')) { envs.unshift('node'); }
 	if(envs.includes('vue')) { envs.unshift('browser'); }
 	if(envs.includes('vue') && envs.includes('server')) { envs.push('vue-server'); }
-	envs = [...new Set(envs)].filter(env => typesPreset.includes(env)).sort((a, b) => levelsTypePreset[a] - levelsTypePreset[b]);
+	envs = [...new Set(envs)].filter(env => typesPreset.includes(env) || env in levelsTypePreset).sort((a, b) => levelsTypePreset[a] - levelsTypePreset[b]);
 
 
 	if(!envs.length) { throw 'empty envs'; }

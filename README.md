@@ -2,7 +2,7 @@
 ![Version](https://img.shields.io/github/package-json/v/nuogz/gaia?style=flat-square)
 [![License](https://img.shields.io/github/license/nuogz/gaia?style=flat-square)](https://www.gnu.org/licenses/lgpl-3.0-standalone.html)
 
-Preset environment with Nuogz libraries on Node or Vue, or both.
+Preset environment with Nuogz libraries on Node.js or Vue.js, or both
 
 ## Usage
 ````cmd

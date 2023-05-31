@@ -1,3 +1,3 @@
 export default [
-	{ route: '/', path: '../dist' },
+	{ prefix: '/', location: '../dist' },
 ];

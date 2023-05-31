@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v4.0.0 - 2023.05.31 17
+* preset: renew preset `server`
+* preset: update the the reserved slots in preset `vue` from `$$$` to `000`
+* preset: renew preset `vue` based on latest package
+* preset: preset `server` based on `node` preset now and renew preset
+* `envs` argument now support `level` attribute for easy sorting
+* preset: renew `.vscode/settings.json`
+* preset: renew preset `server`
+* preset: bump up `@nuogz/desire` to `v6.x` and renew related code
+* preset: bump up `@nuogz/desire-route` to `v6.x` and renew related code
+* preset: move `index.env.js` to preset `node`
+* preset: use flat config on `ESlint`
+* preset: renew base config files
+* preset: bump up dependencies
+* rename `share` preset to `base`
+* renew base config files
+* improve oper handle codes
+* bump up dependencies
+	* bump up `@nuogz/pangu` to `v4.x` and renew related code
+	* bump up `fs-extra` to `v11.x` and renew related code
+* use eslint flat config, and related config udpate
+	* use `eslint.config.js` instead `eslintrc.cjs`
+
+
 ## v3.1.7 - 2022.11.08 09
 * update some vscode config
 
