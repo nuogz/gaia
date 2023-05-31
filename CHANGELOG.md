@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v4.0.1 - 2023.05.31 17
+* fix bug npn pack
+
+
 ## v4.0.0 - 2023.05.31 17
 * preset: renew preset `server`
 * preset: update the the reserved slots in preset `vue` from `$$$` to `000`
