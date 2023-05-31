@@ -22,6 +22,7 @@ export default defineConfig({
 	root: resolve(dirPackage, 'src'),
 	base: './',
 	build: {
+		target: 'esnext',
 		outDir: resolve(dirPackage, 'dist'),
 		emptyOutDir: true,
 		chunkSizeWarningLimit: 1024,
@@ -31,18 +32,24 @@ export default defineConfig({
 	clearScreen: false,
 	server: {
 		hmr: {
-			port: 45$$$port-surfix,
+			port: 45000,
 		},
-		port: 47$$$port-surfix,
+		port: 47000,
 		proxy: {
 			'^/api/': {
-				target: 'http://127.0.0.1:147$$$port-surfix',
+				target: 'http://127.0.0.1:147000',
 				changeOrigin: true,
 			},
 			'/wock': {
-				target: 'ws://127.0.0.1:147$$$port-surfix/wock',
+				target: 'ws://127.0.0.1:147000/wock',
 				ws: true
 			},
+		},
+		watch: {
+			ignored: [
+				'**/*.{api,lib,map}.js',
+				'**/*.lib/**/*.js'
+			]
 		}
 	}
 });

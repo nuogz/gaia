@@ -43,6 +43,6 @@
 			]
 		},
 		"eslint.config.js": "copy|base",
-		".npmrc|npmrc.txt": "copy|base"
+		".npmrc|npmrc.txt": "concat-text-line"
 	}
 }

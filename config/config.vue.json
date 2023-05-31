@@ -10,6 +10,6 @@
 		"src/index.js": "copy|vue",
 		"src/index.vue": "copy|vue",
 		"src/lib/load-module.js": "copy|vue",
-		"src/lib/moment.js": "copy|vue"
+		"src/lib/day.pure.js": "copy|vue"
 	}
 }

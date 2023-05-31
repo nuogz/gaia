@@ -16,19 +16,18 @@
 	import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 	import CV from '@nuogz/css-var';
-	import Sidebar, { moduleNow, tabs } from '@nuogz/vue-sidebar';
+	import { Sidebar, moduleNow, tabs } from '@nuogz/vue-sidebar';
 
 
+	document.title = '000';
 
 
-	document.title = '$$$html-title';
-
-
-	CV.widthScroll = '0.5rem';
+	CV.widthSidebar = '7rem';
 	CV.heightTopbar = '0rem';
+	CV.widthScroll = '0.5rem';
 
 
-	onMounted(() => tabs.add('$$$module-slot', 'icon|title', { title: '$$$module-title', icon: faPerson || '$module-icon' }));
+	onMounted(() => tabs.add('000-000', 'icon|title', { title: '000', icon: faCog || '000' }));
 </script>
 
 <style lang="sass" scoped>

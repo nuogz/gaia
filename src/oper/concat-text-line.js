@@ -13,7 +13,7 @@ export default function concatTextLine(file, fileSource = file, oper, envs, dirC
 
 	const linesBase = [];
 
-	envs.forEach((env, index) => {
+	['base', ...envs].forEach((env) => {
 		try {
 			const linesSub = readFileSync(resolve(dirPreset, env, fileSource), 'utf8').trim().split('\n')
 				.map(line => line.trim());

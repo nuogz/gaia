@@ -1,8 +1,8 @@
 const plugin = require('tailwindcss/plugin');
 
-const spacing = 0.25;
-const unit = 'rem';
-const space = time => `${time * spacing}${unit}`;
+// const spacing = 0.25;
+// const unit = 'rem';
+// const space = time => `${time * spacing}${unit}`;
 
 
 module.exports = {
