@@ -1,7 +1,11 @@
 # CHANGELOG
 
+## v4.0.2 - 2023.06.01 10
+* bump up dependencies
+
+
 ## v4.0.1 - 2023.05.31 17
-* fix bug npn pack
+* fix bug npm pack
 
 
 ## v4.0.0 - 2023.05.31 17
