@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v4.1.0 - 2023.08.30 11
+* preset: update preset `vue` with renew color-related CSS variables 
+* bump up dependencies
+
+
 ## v4.0.2 - 2023.06.01 10
 * bump up dependencies
 

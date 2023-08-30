@@ -1,0 +1,78 @@
+:root
+	--cBase: #1FAAF1
+	--cBaseComple: #F1661F
+	@media (prefers-color-scheme: light)
+		color-scheme: light
+		--cMain: color-mix(in srgb, var(--cBase) 90%, black)
+		--cTextMain: theme("colors.gray.700")
+		--cTextMainDisabled: theme("colors.gray.400")
+		--cBack: theme("colors.gray.100")
+		--cTextBack: theme("colors.gray.700")
+		--cTextBackDisabled: theme("colors.gray.400")
+		--cBorderBack: theme("colors.gray.700")
+	@media (prefers-color-scheme: dark)
+		color-scheme: dark
+		--cMain: var(--cBase)
+		--cTextMain: theme("colors.gray.700")
+		--cTextMainDisabled: theme("colors.gray.400")
+		--cBack: theme("colors.gray.700")
+		--cTextBack: theme("colors.gray.100")
+		--cTextBackDisabled: theme("colors.gray.400")
+		--cBorderBack: theme("colors.gray.100")
+	&.color-scheme-dark
+		color-scheme: dark
+		--cMain: var(--cBase)
+		--cTextMain: theme("colors.gray.700")
+		--cTextMainDisabled: theme("colors.gray.400")
+		--cBack: theme("colors.gray.700")
+		--cTextBack: theme("colors.gray.100")
+		--cTextBackDisabled: theme("colors.gray.400")
+		--cBorderBack: theme("colors.gray.100")
+
+
+	--cOkay: theme("colors.green.600")
+	--cFail: theme("colors.red.600")
+
+	--cSidebarRingFocus: var(--cBaseComple)
+	--cSidebarRingNow: var(--cTextBack)
+
+
+html
+	@apply h-full overflow-x-hidden overflow-y-auto
+	color: var(--cTextBack)
+	background: var(--cBack)
+	font-family: 'Source Code Pro', 'Microsoft YaHei'
+
+input
+	color: var(--cTextBack)
+
+
+
+/** Global Scrollbar Style **/
+*
+	scrollbar-width: thin
+	scrollbar-color: color-mix(in srgb, var(--cMain) 50%, var(--cBack) 20%) color-mix(in srgb, var(--cMain) 20%, var(--cBack) 20%)
+
+::-webkit-scrollbar
+	width: var(--widthScroll)
+	height: var(--widthScroll)
+
+::-webkit-scrollbar-track:hover
+	background-color: color-mix(in srgb, var(--cMain) 20%, var(--cBack) 20%)
+
+::-webkit-scrollbar-thumb
+	border-radius: var(--widthScroll)
+	background: color-mix(in srgb, var(--cMain) 50%, var(--cBack) 20%)
+
+::-webkit-scrollbar-thumb:hover
+	background: color-mix(in srgb, var(--cMain) 80%, var(--cBack) 20%)
+
+::-webkit-scrollbar-thumb:active
+	background: var(--cMain) 100%
+
+::-webkit-scrollbar-corner
+	background-color: transparent
+
+
+comp-alert p-body-content
+	@apply whitespace-pre

@@ -1,3 +1,5 @@
+import './index.env.js';
+
 import { createApp } from 'vue';
 import { MouseMenuDirective } from '@howdyjs/mouse-menu';
 
@@ -20,7 +22,7 @@ const app = createApp(App);
 app.provide('app', app);
 
 
-window.addEventListener('load', async () => {
+const init = async () => {
 	app.mixin({ data() { return { brop }; } });
 
 	await installAlert(app);
@@ -36,4 +38,7 @@ window.addEventListener('load', async () => {
 
 
 	app.mount('#app');
-});
+};
+
+if(document.readyState == 'complete') { await init(); }
+else { window.addEventListener('load', init); }

@@ -19,6 +19,10 @@
 	import { Sidebar, moduleNow, tabs } from '@nuogz/vue-sidebar';
 
 
+	import './index.pcss';
+	import './index.sass';
+
+
 	document.title = '000';
 
 
@@ -40,14 +44,6 @@ p-main
 	module
 		@apply block relative
 </style>
-
-
-<style lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-</style>
-
 
 <style lang="sass">
 html

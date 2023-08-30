@@ -2,7 +2,8 @@
 	"html.format.enable": false,
 	"volar.format.initialIndent": {
 		"javascript": true,
-		"html": true,
+		"html": true
 	},
-	"volar.inlayHints.eventArgumentInInlineHandlers": false
+	"vue.inlayHints.inlineHandlerLeading": false,
+	"vue.inlayHints.missingProps": true
 }
