@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v4.1.1 - 2023.08.30 11
+* preset `vue`: use `@nuog/vue-sidebar@2.3.2`
+* preset `vue`: improve `index.sass`
+* bump up dependencies
+
+
 ## v4.1.0 - 2023.08.30 11
 * preset: update preset `vue` with renew color-related CSS variables 
 * bump up dependencies

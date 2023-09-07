@@ -54,25 +54,44 @@ input
 	scrollbar-color: color-mix(in srgb, var(--cMain) 50%, var(--cBack) 20%) color-mix(in srgb, var(--cMain) 20%, var(--cBack) 20%)
 
 ::-webkit-scrollbar
-	width: var(--widthScroll)
-	height: var(--widthScroll)
+	@apply w-[var(--widthScroll)] h-[var(--widthScroll)]
+
+::-webkit-scrollbar-corner
+	@apply bg-transparent
 
 ::-webkit-scrollbar-track:hover
 	background-color: color-mix(in srgb, var(--cMain) 20%, var(--cBack) 20%)
 
 ::-webkit-scrollbar-thumb
-	border-radius: var(--widthScroll)
 	background: color-mix(in srgb, var(--cMain) 50%, var(--cBack) 20%)
 
-::-webkit-scrollbar-thumb:hover
-	background: color-mix(in srgb, var(--cMain) 80%, var(--cBack) 20%)
+	&:vertical
+		border-radius: var(--widthScroll) 0 0 var(--widthScroll)
+	&:horizontal
+		border-radius: var(--widthScroll) var(--widthScroll) 0 0
+	&:hover
+		background: color-mix(in srgb, var(--cMain) 80%, var(--cBack) 20%)
+	&:active
+		@apply bg-[var(--cMain)] border-0 border-solid border-[var(--cBack)]
 
-::-webkit-scrollbar-thumb:active
-	background: var(--cMain) 100%
+		&:vertical
+			@apply border-r
+		&:horizontal
+			@apply border-b
 
-::-webkit-scrollbar-corner
-	background-color: transparent
 
+/** Global Scrollbar Style (with Main color background) **/
+[back-scheme=main]
+	*
+		scrollbar-color: color-mix(in srgb, var(--cBack) 50%, var(--cMain) 20%) color-mix(in srgb, var(--cBack) 20%, var(--cMain) 20%)
 
-comp-alert p-body-content
-	@apply whitespace-pre
+	&::-webkit-scrollbar-track:hover
+		background-color: color-mix(in srgb, var(--cBack) 20%, var(--cMain) 20%)
+
+	&::-webkit-scrollbar-thumb
+		background: color-mix(in srgb, var(--cBack) 50%, var(--cMain) 20%)
+
+		&:hover
+			background: color-mix(in srgb, var(--cBack) 80%, var(--cMain) 20%)
+		&:active
+			@apply bg-[var(--cBack)] border-[var(--cMain)]

@@ -28,7 +28,13 @@ const init = async () => {
 	await installAlert(app);
 	aegis.alert = $alert;
 
-	app.directive('menu', MouseMenuDirective);
+	app.directive('menu', {
+		mounted: (el, binding, vnode, prevVNode) =>
+			binding.value?.menuList?.length
+				? MouseMenuDirective.mounted(el, binding, vnode, prevVNode)
+				: void 0,
+		unmounted: MouseMenuDirective.unmounted,
+	});
 
 	await installTippy(app);
 

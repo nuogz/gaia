@@ -1,8 +1,8 @@
 {
 	"name": "@nuogz/gaia",
-	"version": "4.1.0",
+	"version": "4.1.1",
 	"description": "Preset environment with Nuogz libraries on Node or Vue, or both",
-	"author": "Nuogz",
+	"author": "nuogz",
 	"license": "LGPL-3.0-or-later",
 	"repository": {
 		"type": "git",
