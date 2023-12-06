@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v4.2.1 - 2023.12.06 11
+* preset: fix and improve `jsconfig.json` handle
+
+
 ## v4.2.0 - 2023.12.06 10
 * preset: tweak enviroments
 * oper: `concat-key-value` support `force-assign` flag

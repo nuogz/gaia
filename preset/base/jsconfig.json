@@ -11,5 +11,7 @@
 	"include": [
 		"**/*.js"
 	],
-	"exclude": []
+	"exclude": [
+		"node_modules"
+	]
 }

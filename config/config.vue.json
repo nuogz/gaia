@@ -17,7 +17,9 @@
 		"jsconfig.json": {
 			"type": "handle-json",
 			"handles": [
-				"concat-array|include"
+				"concat-key-value|compilerOptions|force-assign",
+				"concat-array|include",
+				"concat-array|exclude"
 			]
 		}
 	}
