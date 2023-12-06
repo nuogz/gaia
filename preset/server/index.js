@@ -13,7 +13,7 @@ const { folds, faces } = await readRoute(resolve(dirPackage, 'src'));
 
 
 const desire = await new Desire({
-	name: '服务',
+	name: 'Server',
 	host: C.server.host,
 	port: C.server.port,
 

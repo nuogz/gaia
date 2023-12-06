@@ -13,11 +13,11 @@ import concatTextLine from './oper/concat-text-line.js';
 
 
 const typesPreset = ['node', 'server', 'browser', 'vue'];
-const levelsTypePreset = {
+const levels$typePreset = {
 	node: 1,
 	server: 2,
-	browser: 1,
-	vue: 2,
+	browser: 1.1,
+	vue: 2.1,
 	'vue-server': 3,
 };
 
@@ -55,7 +55,7 @@ export default async function init(envs, force = false) {
 	if(envs.includes('server')) { envs.unshift('node'); }
 	if(envs.includes('vue')) { envs.unshift('browser'); }
 	if(envs.includes('vue') && envs.includes('server')) { envs.push('vue-server'); }
-	envs = [...new Set(envs)].filter(env => typesPreset.includes(env) || env in levelsTypePreset).sort((a, b) => levelsTypePreset[a] - levelsTypePreset[b]);
+	envs = [...new Set(envs)].filter(env => typesPreset.includes(env) || env in levels$typePreset).sort((a, b) => levels$typePreset[a] - levels$typePreset[b]);
 
 
 	if(!envs.length) { throw 'empty envs'; }

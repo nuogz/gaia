@@ -79,6 +79,8 @@ export default function handleJSON(file, fileSource = file, oper, envs, dirCWD, 
 		}
 		else if(typeHandle == 'concat-key-value') {
 			const textPart = params[0];
+			const flags = params[1] ? params[1].split(',') : [];
+			const willForceAssign = flags.includes('force-assign');
 
 			const target = seek(base, textPart);
 
@@ -89,7 +91,7 @@ export default function handleJSON(file, fileSource = file, oper, envs, dirCWD, 
 					const targetSub = seek(sub, textPart);
 
 					Object.entries(targetSub).forEach(([key, value]) => {
-						if(!(key in target)) {
+						if(!(key in target) || willForceAssign) {
 							target[key] = value;
 						}
 					});

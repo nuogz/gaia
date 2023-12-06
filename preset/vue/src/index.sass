@@ -1,12 +1,15 @@
 :root
-	--cBase: #1FAAF1
-	--cBaseComple: #F1661F
+	--spc: theme("spacing.1")
+
+	--cBase: 000
+	--cBaseComple: 000
+
 	@media (prefers-color-scheme: light)
 		color-scheme: light
 		--cMain: color-mix(in srgb, var(--cBase) 90%, black)
 		--cTextMain: theme("colors.gray.700")
 		--cTextMainDisabled: theme("colors.gray.400")
-		--cBack: theme("colors.gray.100")
+		--cBack: theme("colors.gray.50")
 		--cTextBack: theme("colors.gray.700")
 		--cTextBackDisabled: theme("colors.gray.400")
 		--cBorderBack: theme("colors.gray.700")
@@ -16,18 +19,18 @@
 		--cTextMain: theme("colors.gray.700")
 		--cTextMainDisabled: theme("colors.gray.400")
 		--cBack: theme("colors.gray.700")
-		--cTextBack: theme("colors.gray.100")
+		--cTextBack: theme("colors.gray.50")
 		--cTextBackDisabled: theme("colors.gray.400")
-		--cBorderBack: theme("colors.gray.100")
+		--cBorderBack: theme("colors.gray.50")
 	&.color-scheme-dark
 		color-scheme: dark
 		--cMain: var(--cBase)
 		--cTextMain: theme("colors.gray.700")
 		--cTextMainDisabled: theme("colors.gray.400")
 		--cBack: theme("colors.gray.700")
-		--cTextBack: theme("colors.gray.100")
+		--cTextBack: theme("colors.gray.50")
 		--cTextBackDisabled: theme("colors.gray.400")
-		--cBorderBack: theme("colors.gray.100")
+		--cBorderBack: theme("colors.gray.50")
 
 
 	--cOkay: theme("colors.green.600")

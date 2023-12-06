@@ -16,8 +16,7 @@
 	import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 	import CV from '@nuogz/css-var';
-	import { Sidebar, moduleNow, tabs } from '@nuogz/vue-sidebar';
-
+	import { Sidebar, moduleNow, tabAdmin } from '@nuogz/vue-sidebar';
 
 	import './index.pcss';
 	import './index.sass';
@@ -31,7 +30,7 @@
 	CV.widthScroll = '0.5rem';
 
 
-	onMounted(() => tabs.add('000-000', { type: ''icon|title', title: '000', icon: faCog || '000' }));
+	onMounted(() => tabAdmin.add('000-000', { type: 'icon|title', title: '000', icon: faCog || '000' }));
 </script>
 
 <style lang="sass" scoped>
@@ -47,5 +46,5 @@ p-main
 
 <style lang="sass">
 .tippy-box[data-theme~='light-border']
-	@apply shadow-mdd px-2 text-[var(--cTextMain)] bg-[var(--cMain)] #{!important}
+	@apply shadow-mdd px-2 whitespace-pre text-left text-[var(--cTextMain)] bg-[var(--cMain)] #{!important}
 </style>

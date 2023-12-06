@@ -13,6 +13,12 @@
 		"src/index.sass": "copy|vue",
 		"src/index.vue": "copy|vue",
 		"src/lib/load-module.js": "copy|vue",
-		"src/lib/day.pure.js": "copy|vue"
+		"src/lib/day.pure.js": "copy|vue",
+		"jsconfig.json": {
+			"type": "handle-json",
+			"handles": [
+				"concat-array|include"
+			]
+		}
 	}
 }

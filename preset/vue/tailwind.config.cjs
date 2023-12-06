@@ -26,6 +26,7 @@ module.exports = {
 					display: 'inline-block',
 					verticalAlign: 'top',
 				},
+
 				// text ellipsis
 				'.elli': {
 					overflow: 'hidden',
@@ -44,7 +45,6 @@ module.exports = {
 			},
 				{ values: theme('trans') }
 			);
-
 
 			// line height with border
 			matchUtilities({

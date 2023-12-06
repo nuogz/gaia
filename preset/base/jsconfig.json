@@ -1,10 +1,15 @@
 {
 	"compilerOptions": {
-		"module": "nodenext",
 		"moduleResolution": "nodenext",
+		"module": "nodenext",
 		"target": "esnext",
 		"experimentalDecorators": true,
-		"strict": true
+		"strict": true,
+		"allowJs": true,
+		"jsx": "preserve"
 	},
+	"include": [
+		"**/*.js"
+	],
 	"exclude": []
 }

@@ -1,8 +1,9 @@
 {
 	"recommendations": [
-		"Vue.volar",
-		"bradlc.vscode-tailwindcss",
+		"csstools.postcss",
 		"syler.sass-indented",
-		"csstools.postcss"
+		"bradlc.vscode-tailwindcss",
+		"vue.vscode-typescript-vue-plugin",
+		"vue.volar"
 	]
 }
