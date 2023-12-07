@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v4.2.2 - 2023.12.07 14
+* preset `node` and `server`: change `.vscode/launch.json`.`runtimeExecutable` to `node` from `node.exe`
+* config: update config all about `jsconfig.json`
+* preset `node`: `jsconfig.json`.`exclude` includes `test` folder now
+* bump up dependencies
+
+
 ## v4.2.1 - 2023.12.06 11
 * preset: fix and improve `jsconfig.json` handle
 

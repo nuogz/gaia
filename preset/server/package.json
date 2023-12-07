@@ -1,7 +1,7 @@
 {
 	"dependencies": {
-		"@nuogz/desire": "^6",
-		"@nuogz/desire-harbour": "^6",
-		"@nuogz/desire-route": "^2"
+		"@nuogz/desire": "^6.1.0",
+		"@nuogz/desire-harbour": "^6.2.0",
+		"@nuogz/desire-route": "^2.4.0"
 	}
 }

@@ -10,7 +10,7 @@
 				"<node_internals>/**"
 			],
 			"cwd": "${workspaceFolder}",
-			"runtimeExecutable": "node.exe",
+			"runtimeExecutable": "node",
 			"program": "index.js",
 			"args": []
 		}

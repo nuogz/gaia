@@ -3,6 +3,6 @@
 		"node"
 	],
 	"dependencies": {
-		"@nuogz/pangu": "^4"
+		"@nuogz/pangu": "^4.2.0"
 	}
 }
